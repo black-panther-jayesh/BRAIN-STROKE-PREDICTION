@@ -1,0 +1,129 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            html {
+                height: 120%;
+            }
+            h1{
+                color: black;
+              /* background-color: rgba(255, 255, 255, 0.5); */
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+                background-image: url(https://th.bing.com/th/id/R.4c3cdcf16fc0f0998827644e2621951a?rik=FL89KolHw1slAw&riu=http%3a%2f%2fwww.infoyoungindia.com%2fwp-content%2fuploads%2f2019%2f07%2fPsychology.png&ehk=GUzPIByvTFvO9zM8f2Cr%2fnQQwaFeYtlHAZuwweD9Lww%3d&risl=&pid=ImgRaw&r=0);
+                background-size: cover;
+                background-position: top;
+                background-repeat: no-repeat;
+
+            }
+
+            .display {
+                color: white;
+                text-align: center;
+                padding-top: 50px;
+            }
+
+            table {
+                margin: 50px auto;
+                width: 50%;
+                padding: 20px;
+                border: 2px solid black;
+                border-radius: 15px;
+                background-color: rgba(255, 255, 255);
+            }
+
+            th,
+            td {
+                padding: 15px;
+                text-align: left;
+                border: #62B6CA solid 2px;
+                
+            }
+
+            p {
+                width: 1200px;
+                margin: auto;
+                text-align: center;
+                font-size: 18px;
+                line-height: 1.5;
+                color: black;
+                background-color: white;
+                padding: 20px;
+                border: 3px solid black;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="display">
+            <h1>Great! Based on your inputs, the algorithm has determined that you are not at risk for stroke.</h1>
+            <p>The algorithm has determined that you are at low risk of having a stroke based on your inputs. However,
+                please keep in mind that this is only an algorithmic assessment and you should still consult with a medical
+                professional to ensure your overall health and well-being. It is always a good idea to maintain a healthy
+                lifestyle, including regular exercise and a balanced diet, to reduce the risk of developing any health
+                conditions.</p>
+            <!-- <img src=""alt="" style="width:250px;height:250px;"> -->
+        </div>
+        <div style="padding-bottom: 10px;">
+
+            <table>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td>{{ input_data[0] }}</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td>{{ input_data[1] }}</td>
+                </tr>
+                <tr>
+                    <td>Hypertension:</td>
+                    <td>{{ input_data[2] }}</td>
+                </tr>
+                <tr>
+                    <td>Heart Disease:</td>
+                    <td>{{ input_data[3] }}</td>
+                </tr>
+                <tr>
+                    <td>Married Status:</td>
+                    <td>{{ input_data[4] }}</td>
+                </tr>
+                <tr>
+                    <td>Work Type:</td>
+                    <td>{{ input_data[5] }}</td>
+                </tr>
+                <tr>
+                    <td>Residence Type:</td>
+                    <td>{{ input_data[6] }}</td>
+                </tr>
+                <tr>
+                    <td>Average Glucose:</td>
+                    <td>{{ input_data[7] }}</td>
+                </tr>
+                <tr>
+                    <td>BMI:</td>
+                    <td>{{ input_data[8] }}</td>
+                </tr>
+                <tr>
+                    <td>Smoking Status:</td>
+                    <td>{{ input_data[9] }}</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    
+    </html>

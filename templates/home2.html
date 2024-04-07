@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-image: url(https://th.bing.com/th/id/R.4c3cdcf16fc0f0998827644e2621951a?rik=FL89KolHw1slAw&riu=http%3a%2f%2fwww.infoyoungindia.com%2fwp-content%2fuploads%2f2019%2f07%2fPsychology.png&ehk=GUzPIByvTFvO9zM8f2Cr%2fnQQwaFeYtlHAZuwweD9Lww%3d&risl=&pid=ImgRaw&r=0);
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+
+    }
+
+    .login-box {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      width: 900px;
+      padding: 40px;
+      margin-top: 300px;
+      margin-bottom: 200px;
+      margin-top: 200px;
+      transform: translate(-50%, -50%);
+      background: white;
+      opacity: 0.9;
+      box-sizing: border-box;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+      border-radius: 10px;
+    }
+
+    .login-box h2 {
+      margin: 0 0 30px;
+      padding: 0;
+      color: black;
+      text-align: center;
+    }
+
+    .login-box .user-box {
+      position: relative;
+    }
+
+    .login-box .user-box input {
+      width: 100%;
+      padding: 5px 0;
+      font-size: 16px;
+      color: black;
+      margin-bottom: 30px;
+      border: none;
+      border-bottom: 1px solid black;
+      outline: none;
+      background: transparent;
+    }
+
+    .login-box .user-box label {
+      position: absolute;
+      top: 10;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: black;
+      pointer-events: none;
+      transition: .5s;
+    }
+
+    .login-box .user-box input:focus~label,
+    .login-box .user-box input:valid~label {
+      top: -20px;
+      left: 0;
+      color: blue;
+      font-size: 12px;
+    }
+
+    input[type="submit"] {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #000000;
+      font-size: 16px;
+      text-decoration: none;
+      text-transform: uppercase;
+      overflow: hidden;
+      transition: .5s;
+      margin-top: 40px;
+      letter-spacing: 4px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background: lightblue;
+      color: #000000;
+      border-radius: 5px;
+      box-shadow: 0 0 5px lightblue,
+        0 0 25px lightblue,
+        0 0 50px lightblue,
+        0 0 100px lightblue;
+    }
+
+    input[type="submit"]:before {
+      content: '';
+      position: absolute;
+      display: block;
+    }
+
+    input[type="submit"]:before:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, lightblue);
+      animation: btn-anim1 1s linear infinite;
+      content: '';
+    }
+
+    @keyframes btn-anim1 {
+      0% {
+        left: -100%;
+      }
+
+      50%,
+      100% {
+        left: 100%;
+      }
+    }
+
+
+    input[type="submit"]:before:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, lightblue);
+      animation: btn-anim2 1s linear infinite;
+      animation-delay: .25s
+    }
+
+    @keyframes btn-anim2 {
+      0% {
+        top: -100%;
+      }
+
+      50%,
+      100% {
+        top: 100%;
+      }
+    }
+
+    input[type="submit"]:before:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, lightblue);
+      animation: btn-anim3 1s linear infinite;
+      animation-delay: .5s
+    }
+
+    @keyframes btn-anim3 {
+      0% {
+        right: -100%;
+      }
+
+      50%,
+      100% {
+        right: 100%;
+      }
+    }
+
+    input[type="submit"]:before:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, blue);
+      animation: btn-anim4 1s linear infinite;
+      animation-delay: .75s
+    }
+
+    @keyframes btn-anim4 {
+      0% {
+        bottom: -100%;
+        padding-bottom: 150px;
+      }
+
+      50%,
+      100% {
+        bottom: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+    <h2 style="font-size: 50px;">Brain Stroke Risk Prediction</h2>
+    <form action="{{ url_for('result') }}" method="post">
+      <div class="user-box">
+        <input type="text" id="gender" name="gender" step="any" required>
+        <label>Gender (1 for Male, 0 for Female)</label>
+      </div>
+      <div class="user-box">
+        <input type="number" id="age" name="age" step="any" required>
+        <label>Age</label>
+      </div>
+      <div class="user-box">
+        <input type="number" id="hypertension" name="hypertension" step="any" required>
+        <label>Hypertension (1 for Yes, 0 for No)</label>
+      </div>
+      <div class="user-box">
+        <input type="number" id="heart_disease" name="heart_disease" step="any" required>
+        <label>Heart Disease (1 for Yes, 0 for No)</label>
+      </div>
+      <div class="user-box">
+        <input type="number" id="ever_married" name="ever_married" step="any" required>
+        <label>Ever Married (1 for Yes, 0 for No)</label>
+      </div>
+      <div class="user-box">
+        <input type="number" id="work_type" name="work_type" step="any" required>
+        <label>Work Type (0 for Gov_job, 1 for Never Worked, 2 for Private, 3 for self employed, 4 for children)</label>
+      </div>
+      <div class="user-box">
+        <input type="number" id="Residence_type" name="Residence_type" step="any" required>
+        <label>Residence Type (1 for Urban, 0 for Rural)</label>
+      </div>
+      <div class="user-box">
+        <input type="number" id="avg_glucose_level" name="avg_glucose_level" step="any" required>
+        <label>Avg Glucose level</label>
+      </div>
+      <div class="user-box">
+        <input type="number" id="bmi" name="bmi" step="any" required>
+        <label>BMI</label>
+      </div>
+      <div class="user-box">
+        <input type="number" id="smoking_status" name="smoking_status" step="any" required>
+        <label>Smoking Status (0 for Unknown, 1 for Formerly Smoke, 2 for Never Smoked, 3 for Smokes Frequently)</label>
+      </div>
+      <input type="submit" value="result">
+    </form>
+  </div>
+</body>
+
+</html>
